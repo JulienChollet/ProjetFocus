@@ -1,0 +1,96 @@
+/*------------------------------------------------------------------------*/
+
+/*						Projet Focus le 03/02/2017						  */
+
+/*------------------------------------------------------------------------*/
+
+body{
+	height: 100%;
+	width: 100%;
+	background-color: #e6e6e6;
+	font-family: 'Roboto', sans-serif;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+/*------------------------------------------------------------------------*/
+header{
+	background-color: #FF9900;
+}
+	nav{
+		background-color: #894524;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		padding-left: 15px;
+	}
+		ul{
+			margin-top: 39px;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+		.nav{
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+			li{
+				height: 46px;
+				display: flex;
+				align-items: center;
+				border-left: 5px #894524 solid;
+			}
+				.nav li a {
+					height: 100%;
+				}
+					li:hover{
+						background-color: #e3e3e3;
+						border-left: 5px #4E961E solid;
+					}
+					li a:hover{
+						display: inline-block;
+						color: #2B6306;
+						width: 100%;
+					}
+	.entete{
+		padding-right: 0px;
+		margin-left: 160px;
+	}
+		.head{
+			background-color: #FF9900;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding-left: 0px;
+   			padding-right: 0px;
+    		margin-left: 15px;
+		}
+		.h1{
+			text-align: center
+			margin-top: 0px;
+		}
+/*--------------------------------------------------------------*/
+.deco{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 205px;
+	height:35px;
+	background-color: #894524;
+	color: white;
+	border-radius: 5px;
+	border: solid 1px;
+}
+.deco:hover{
+	background-color: #eee;
+	color: #2B6306;
+	border: solid 1px #894524;
+}
+/*------------------------------------------------------------------------*/
+
+/*							Pour utilisé Bootstrap						  */
+
+/*------------------------------------------------------------------------*/
