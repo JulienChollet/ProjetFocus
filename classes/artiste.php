@@ -91,6 +91,7 @@ class artiste {
         '".addslashes($this->biographie)."')");
      if($res !== FALSE) {
         $this->id = $res;
+        die('ok');
         return TRUE;
       }
       else {
@@ -118,16 +119,16 @@ class artiste {
     <section class="container">
       <div class="row">
         <div class="col-md-offset-3 col-md-6">
-          <form action="<?php echo $target; ?>" method="post">
+          <form class="form-group" action="<?php echo $target; ?>" method="post">
             <label for="pseudo_nom">Nom de l'artiste</label>
-              <input type="text" name="pseudo_nom" value="<?php echo $this->pseudo_nom ?>">
+              <input class="form-control" type="text" name="pseudo_nom" value="<?php echo $this->pseudo_nom ?>">
             <label for="nationalite">nationalité</label>
-              <input type="text" name="nationalite" value="<?php echo $this->nationalite ?>"><br>
+              <input class="form-control"type="text" name="nationalite" value="<?php echo $this->nationalite ?>"><br>
             <label for="periode">période</label>
-              <textarea name="periode" value="<?php echo $this->periode ?>"></textarea> 
+              <textarea class="form-control" name="periode" value="<?php echo $this->periode ?>"></textarea> 
             <label for="biographie">biographie</label>
-              <textarea name="biographie" value="<?php echo $this->biographie ?>" ></textarea>  
-              <input type="submit" value="<?php echo $submit==''?'Valider':$submit; ?>">
+              <textarea class="form-control" name="biographie" value="<?php echo $this->biographie ?>" ></textarea>  
+              <input class="deco" type="submit" value="<?php echo $submit==''?'Valider':$submit; ?>">
           </form>
         </div>
       </div>

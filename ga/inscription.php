@@ -90,17 +90,19 @@ if (isset($_GET['action']) && $_GET['action'] = 'delete') {
         {
                     
      ?>
-                    <form action="index.php" method="POST">
+                    <form class="form-group" action="index.php" method="POST">
                     <!-- <label for="nom">Nom</label><br> -->
-                    <input type="text" name="nom" value="<?php echo $nom['nom']; ?>">
-               
+                    <input class="form-control" type="text" name="nom" value="<?php echo $nom['nom']; ?>">
+
+              
                 <?php
-                echo '<a href="edit_utilisateur.php?id='.$nom['id'].'">Modifier</a>';
-                echo '<a href="index.php?action=delete&id='.$nom['id'].'"> Supprimer</a><br>';
+                echo '<a class="deco" href="edit_utilisateur.php?id='.$nom['id'].'">Modifier</a>';
+                echo '<a class="deco" href="index.php?action=delete&id='.$nom['id'].'"> Supprimer</a><br>';
 
         }
                 
                 ?>
+                
                     </form>
             </div>
         </div>

@@ -152,8 +152,13 @@ function syncDb() {
       $res = sql("INSERT INTO oeuvre (nom, type, date_entre, date_sortie, periode, dimension, photo)
         VALUES (
         '".addslashes($this->nom)."',
-        '".addslashes($this->email)."',
-        '".addslashes($this->autorisations)."')");
+        '".addslashes($this->type)."',
+        '".addslashes($this->date_entre)."',
+        '".addslashes($this->date_sortie)."',
+        '".addslashes($this->periode)."',
+        '".addslashes($this->dimension)."',
+        '".addslashes($this->photo)."',
+        )");
      if($res !== FALSE) {
         $this->id = $res;
         return TRUE;
@@ -167,21 +172,35 @@ function syncDb() {
       // Sinon on fait un update
       $res = sql("UPDATE nom SET
         nom ='".addslashes($this->nom)."',
-        email = '".addslashes($this->email)."',
-        autorisations = '".addslashes($this->autorisations)."'
+        type = '".addslashes($this->type)."',
+        date_entre = '".addslashes($this->date_entre)."',
+        date_sortie = '".addslashes($this->date_sortie)."',
+        periode = '".addslashes($this->periode)."',
+        dimension = '".addslashes($this->dimension)."',
+        photo = '".addslashes($this->photo)."'
         WHERE id='".addslashes($this->id)."';");
       return $res;
     }
   }
 
+function form_oeuvre($target, $submit = ''){
+  ?> 
+    <section class="container">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <form class="form-group" action="<?php echo $target; ?>" method="post">
+            <label for="nom">Titre de l'oeuvre</label>
+              <input class="form-control" type="text" name="nom" value="<?php echo $this->nom ?>">
+            <label for="nationalite">nationalité</label>
+              <input class="form-control"type="text" name="nationalite" value="<?php echo $this->nationalite ?>"><br>
+            <label for="periode">période</label>
+              <textarea class="form-control" name="periode" value="<?php echo $this->periode ?>"></textarea> 
+            <label for="biographie">biographie</label>
+              <textarea class="form-control" name="biographie" value="<?php echo $this->biographie ?>" ></textarea>  
+              <input class="deco" type="submit" value="<?php echo $submit==''?'Valider':$submit; ?>">
+          </form>
+        </div>
+      </div>
+    </section>
+}
 
-//mise à jour du mot de passe utilisateur
-
-  function updateMdp($mdp) {
-    if(empty($this->id)){
-      return FALSE;
-    }
-    $res = sql("UPDATE utilisateur set mdp = '".crypt($mdp, CRYPT_SALT)."'
-     WHERE id='".$this->id."'");
-  return $res;
-    }

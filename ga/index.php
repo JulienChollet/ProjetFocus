@@ -24,37 +24,51 @@ include('header.php');
 
 
 
-if ( isset($_SESSION['id']) && $_SESSION['autorisations'] == '1'){	
- 	echo '
- 			<section class="container">
-        		<div class="row">
-            		<div class="col-md-offset-3 col-md-6">
- 						<a href="inscription.php">Création et Modification profil</a>
- 					</div>
- 				</div>
- 			</section>';
+if ( isset($_SESSION['id']) && $_SESSION['autorisations'] == '1'){  
+    echo '
+            <section class="container">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6">
+                        <a href="inscription.php">Création et Modification profil</a>
+                    </div>
+                </div>
+            </section>';
 }
+    $artiste = new Artiste();
+    $artiste->form_artiste('index.php');
 
-$artiste = new Artiste();
-$artiste->form_artiste('index.php');
 
-if(isset($_POST['artiste'] )){
+if(isset($_POST['pseudo_nom'])){
+    $artiste = new Artiste();
     $artiste->setPseudo_nom($_POST['pseudo_nom']);
     $artiste->setNationalite($_POST['nationalite']);
     $artiste->setPeriode($_POST['periode']);
     $artiste->setBiographie($_POST['biographie']);
+    $sync = $artiste->syncDb();
 
-    // if($_POST['mdp1'] == $_POST['mdp2']){
-    //     $sync = $artiste->syncDb();
-    //     if($sync) {
-    //     $artiste->updateMdp($_POST['mdp1']);
-    //     }
+} 
+?>
+<section class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+    <label for="pseudo_nom">Artiste</label><br>
+        <?php
+        
+        $nb_artiste = sql("SELECT pseudo_nom,id FROM artiste");
+        
+        foreach ($nb_artiste as $nom) 
+        {
+                    
+     ?>
+        <form class="form-group" action="index.php" method="POST">
+             <!-- <label for="nom">Nom</label><br> -->
+             <input class="form-control" type="text" name="nom" value="<?php echo $nom['pseudo_nom']; ?>">
 
-    // }
-    // else{
-    //     $error = "Vos mots de passe ne sont pas identiques";
-    // }
-}
+              
+                <?php
+                echo '<a class="deco" href="index.php?id='.$nom['id'].'">Modifier</a>';
+                echo '<a class="deco" href="index.php?action=delete&id='.$nom['id'].'"> Supprimer</a><br>';
 
-
-  ?>
+        }
+                
+?>

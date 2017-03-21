@@ -143,24 +143,24 @@ class utilisateur {
           <section class="container">
               <div class="row">
                   <div class="col-md-offset-3 col-md-6">
-                    <form action="<?php echo $target; ?>" method="post">
+                    <form class="form-group" action="<?php echo $target; ?>" method="post">
                       <label for="nom">Nom d'utilisateur</label>
-                        <input type="text" name="nom" value="<?php echo $this->nom; ?>">
+                        <input class="form-control" type="text" name="nom" value="<?php echo $this->nom; ?>">
                       
                       <label for="email">Courriel</label>
-                        <input type="email" name="email" value="<?php echo $this->email; ?>">
+                        <input class="form-control" type="email" name="email" value="<?php echo $this->email; ?>">
 
                       <label for="autorisations">autorisations</label>
-                        <select type="text" name="autorisations">
+                        <select class="form-control" type="text" name="autorisations">
                             <option value="2">utilisateur</option>
                             <option value="1">administrateur</option>
                          </select><br>
                 
                       <label for="password">Mot de Passe</label>
-                        <input type="password" name="mdp1">
-                        <input type="password" name="mdp2">
+                        <input class="form-control" type="password" name="mdp1">
+                        <input class="form-control" type="password" name="mdp2">
 
-                      <input type="submit" value="<?php echo $submit==''?'Envoyer':$submit; ?>">
+                      <input class="deco" type="submit" value="<?php echo $submit==''?'Envoyer':$submit; ?>">
                     </form>
                   </div>
               </div>
