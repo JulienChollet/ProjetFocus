@@ -114,7 +114,7 @@ function __construct($id = 0) {
     return $this->id_description;
   }
 
-  function geDimension(){
+  function getDimension(){
     return $this->dimension;
 
   }
@@ -124,7 +124,7 @@ function __construct($id = 0) {
     return TRUE;
   }
 
-  function gePhoto(){
+  function getPhoto(){
     return $this->photo;
 
   }
@@ -191,16 +191,36 @@ function form_oeuvre($target, $submit = ''){
           <form class="form-group" action="<?php echo $target; ?>" method="post">
             <label for="nom">Titre de l'oeuvre</label>
               <input class="form-control" type="text" name="nom" value="<?php echo $this->nom ?>">
-            <label for="nationalite">nationalité</label>
-              <input class="form-control"type="text" name="nationalite" value="<?php echo $this->nationalite ?>"><br>
+            <label for="type">Type</label>
+              <input class="form-control"type="text" name="type" value="<?php echo $this->type ?>">
+            <label for="date_entre">date d'entrée</label>
+              <input class="form-control"type="text" name="date_entre" value="<?php echo $this->date_entre ?>"> 
+            <label for="date_sortie">date de sortie</label>
+              <input class="form-control"type="text" name="date_sortie" value="<?php echo $this->date_sortie ?>">
             <label for="periode">période</label>
-              <textarea class="form-control" name="periode" value="<?php echo $this->periode ?>"></textarea> 
-            <label for="biographie">biographie</label>
-              <textarea class="form-control" name="biographie" value="<?php echo $this->biographie ?>" ></textarea>  
+              <input class="form-control"type="text" name="periode" value="<?php echo $this->periode ?>"> 
+            <label for="dimension">dimensions</label>
+              <input class="form-control"type="text" name="dimension" value="<?php echo $this->dimension ?>">
+            <label for="photo">photo</label>
+              <input class="form-control"type="text" name="photo" value="<?php echo $this->photo ?>">   
               <input class="deco" type="submit" value="<?php echo $submit==''?'Valider':$submit; ?>">
           </form>
         </div>
       </div>
     </section>
+    <?php
 }
 
+function delete() {
+        $resDeleteOeuvre = sql("
+            DELETE FROM oeuvre
+            WHERE id='".$this->id."'
+            ");
+        
+        if($resDeleteOeuvre) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
+    }

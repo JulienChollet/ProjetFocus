@@ -66,7 +66,7 @@ if(isset($_POST['pseudo_nom'])){
 
               
                 <?php
-                echo '<a class="deco" href="index.php?id='.$nom['id'].'">Modifier</a>';
+                echo '<a class="deco" href="edit_artiste.php?id='.$nom['id'].'">Modifier</a>';
                 echo '<a class="deco" href="index.php?action=delete&id='.$nom['id'].'"> Supprimer</a><br>';
 
         }
