@@ -29,32 +29,32 @@ if ( isset($_SESSION['id']) && $_SESSION['autorisations'] == '1'){
             <section class="container">
                 <div class="row">
                     <div class="col-md-offset-3 col-md-6">
-                        <a href="inscription.php" class="btn_deco ">Création et Modification profil</a>
+                        <a href="creation_utilisateur.php" class="btn_deco ">Création et Modification profil</a>
                     </div>
                 </div>
             </section>';
 }
     $artiste = new Artiste();
-    $artiste->form_artiste('index.php');
+    $artiste->form_artiste('edit_artiste.php');
 
 if (isset($_GET['action']) && $_GET['action'] == 'delete') {
     $artiste = new Artiste($_GET['id']);
-    $test = $artiste->delete_artiste();
+    $delete_artiste = $artiste->delete_artiste();
     // essaie de mettre des echo genre : 
-     echo "on fait bien le delete"; var_dump($test); // si $test est FALSE il y a un problème avec ta requête ou ta base de données
+     // echo "on fait bien le delete"; var_dump($test); // si $test est FALSE il y a un problème avec ta requête ou ta base de données
 }
 
 
 
-if(isset($_POST['pseudo_nom'])){
-    $artiste = new Artiste();
-    $artiste->setPseudo_nom($_POST['pseudo_nom']);
-    $artiste->setNationalite($_POST['nationalite']);
-    $artiste->setPeriode($_POST['periode']);
-    $artiste->setBiographie($_POST['biographie']);
-    $sync = $artiste->syncDb();
+// if(isset($_POST['pseudo_nom'])){
+//     $artiste = new Artiste();
+//     $artiste->setPseudo_nom($_POST['pseudo_nom']);
+//     $artiste->setNationalite($_POST['nationalite']);
+//     $artiste->setPeriode($_POST['periode']);
+//     $artiste->setBiographie($_POST['biographie']);
+//     $sync = $artiste->syncDb_artiste();
 
-} 
+// } 
 ?>
 <section class="container">
         <div class="row">
@@ -74,7 +74,7 @@ if(isset($_POST['pseudo_nom'])){
 
               
                 <?php
-                echo '<a class="btn_deco" href="edit_artiste.php?id='.$nom['id'].'">Modifier</a>';
+                echo '<a class="btn_deco" href="edit_artiste.php?action=edit&id='.$nom['id'].'">Modifier</a>';
                 echo '<a class="btn_deco" href="index.php?action=delete&id='.$nom['id'].'"> Supprimer</a><br>';
 
         }

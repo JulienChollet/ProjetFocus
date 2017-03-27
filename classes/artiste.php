@@ -80,7 +80,7 @@ class artiste {
 
   }
 
-  function syncDb() {
+  function syncDb_artiste() {
     if(empty($this->id)) {
       // si $this->id est vide, on fait un INSERT
       $res = sql("INSERT INTO artiste (pseudo_nom, nationalite, periode, biographie)
@@ -101,7 +101,8 @@ class artiste {
     }
     else{
       // Sinon on fait un update
-      $res = sql("UPDATE pseudo_nom SET
+      $res = sql("UPDATE artiste SET
+        pseudo_nom = '".addslashes($this->pseudo_nom)."',
         biographie = '".addslashes($this->biographie)."',
         pseudo_nom ='".addslashes($this->pseudo_nom)."',
         nationalite = '".addslashes($this->nationalite)."',
@@ -127,8 +128,10 @@ class artiste {
             <label for="periode">période</label>
             <input class="form-control" name="periode" placeholder="2000-2010" value="<?php echo $this->periode ?>"> 
             <label for="biographie">biographie</label>
-              <textarea class="form-control" name="biographie"><?php echo $this->biographie ?></textarea>  
+              <textarea class="form-control" name="biographie"><?php echo $this->biographie ?></textarea>
+              <input type="hidden" name="id" value="<?php echo $this->id ?>">  
               <input class="btn_sauv" type="submit" value="<?php echo $submit==''?'Valider':$submit; ?>">
+
           </form>
         </div>
       </div>

@@ -71,7 +71,7 @@ class utilisateur {
 
 // fonction d'écriture et de mise à jour dans la BDD
 
-  function syncDb() {
+  function syncDb_utilisateur() {
     if(empty($this->id)) {
       // si $this->id est vide, on fait un INSERT
       $res = sql("INSERT INTO utilisateur (nom, email, autorisations)
@@ -159,7 +159,8 @@ class utilisateur {
                       <label for="password">Mot de Passe</label>
                         <input class="form-control" type="password" name="mdp1">
                         <input class="form-control" type="password" name="mdp2">
-                      <input class="deco" type="submit" value="<?php echo $submit==''?'Envoyer':$submit; ?>">
+                        <input type="hidden" name="id" value="<?php echo $this->id; ?>">
+                      <input class="btn_sauv" type="submit" value="<?php echo $submit==''?'Envoyer':$submit; ?>">
 
                     </form>
                   </div>
@@ -187,3 +188,18 @@ function delete() {
     }
 
 }
+
+// function update (){
+//         $resUpdateUser = sql("
+//             UPDATE FROM utilisateur
+//             WHERE  id='".$this->id."'
+//             ");
+//         if($resDeleteUser) {
+//             return TRUE;
+//             header('Location: utilisateur.php');
+//         }
+//         else {
+//             return FALSE;
+//         }
+// }
+
