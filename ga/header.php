@@ -31,14 +31,41 @@ foreach($folder as $file) {
 <body><!-- Tableau 1 -->
 	<header class="container-fluid"><!-- tableau 2 -->
 		<nav class="row">
-				<ul class="col-xs-12 nav">
-					<li><a href="index.php"><span class="fa fa-home"></span> Accueil</a></li>
-					<li><a href=""><span class="fa fa-plus-circle" ></span> Nouvelle Exposition</a></li>
-					<li><a href=""><span class="fa fa-plus"></span> Nouvelle Oeuvre</a></li>
-					<li><a href=""><span class="fa fa-folder-o "></span> Archive Exposition</a></li>
-					<li><a href=""><span class="fa fa-archive"></span> Archive Oeuvre</a></li>
-					<li><a href=""><span class="fa fa-chrome"></span> Site Publique</a></li>
-					<li><a href="logout.php"><span class="fa fa-user-o"></span> Deconnexion</a></li>
+				<ul class="col-xs-12 nav nav_ul">
+					<li class="nav_li"><a href="index.php" class="nav_li_a">
+							<span class="fa fa-home"></span> Accueil
+						</a>
+					</li>
+					<li class="nav_li">
+						<a href="nouv_expo.php" class="nav_li_a">
+							<span class="fa fa-plus-circle" ></span> Nouvelle Exposition
+						</a>
+					</li>
+					<li class="nav_li">
+						<a href="nouv_oeuvre.php" class="nav_li_a">
+							<span class="fa fa-plus"></span> Nouvelle Oeuvre
+						</a>
+					</li>
+					<li class="nav_li">
+						<a href="" class="nav_li_a">
+							<span class="fa fa-folder-o "></span> Archive Exposition
+						</a>
+					</li>
+					<li class="nav_li">
+						<a href="" class="nav_li_a">
+							<span class="fa fa-archive"></span> Archive Oeuvre
+						</a>
+					</li>
+					<li class="nav_li">
+						<a href="" class="nav_li_a">
+							<span class="fa fa-chrome"></span> Site Publique
+						</a>
+					</li>
+					<li class="nav_li">
+						<a href="logout.php" class="nav_li_a">
+							<span class="fa fa-user-times"></span> Deconnexion
+						</a>
+					</li>
 				</ul>
 			</nav>	
 	</header>
@@ -61,13 +88,16 @@ foreach($folder as $file) {
 						<span class="fa fa-user-o">Deconnexion</a></span>
 					</a>
 				</div>
+				</div>
 			</div>
-		</div></div>
+			<div class="ligne col-xs-offset-2 col-xs-10 hidden-md hidden-lg"></div>
+			<div class="ligne col-xs-11 hidden-xs hidden-sm" col-md-12"></div>
+		</div>
 		<!-- _______________________ Ordinateur ________________________ -->
 		<div class="row"><!-- Ligne 2 -->
 			<div class="col-md-1 col-xs-offset-10 hidden-sm hidden-xs ">
-				<a href="logout.php" class="deco">
-					<span class="fa fa-user-o"> Deconnexion</a></span>
+				<a href="logout.php" class="btn_deco">
+					<span class="fa fa-user-times"> Deconnexion</a></span>
 				</a>
 			</div>
 		</div> 

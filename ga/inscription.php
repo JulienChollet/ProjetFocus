@@ -70,10 +70,13 @@ session_start();
 
 //Condition nécéssaire pour effacer le profil utilisateur
 
-if (isset($_GET['action']) && $_GET['action'] = 'delete') {
+if (isset($_GET['action']) && $_GET['action'] == 'delete') {
     $utilisateur = new Utilisateur($_GET['id']);
-    $utilisateur->delete();
+    $delete = $utilisateur->delete();
+    // essaie de mettre des echo genre : 
+    // echo "on fait bien le delete"; var_dump($test); // si $test est FALSE il y a un problème avec ta requête ou ta base de données
 }
+
 
 ?>
     
@@ -96,8 +99,8 @@ if (isset($_GET['action']) && $_GET['action'] = 'delete') {
 
               
                 <?php
-                echo '<a class="deco" href="edit_utilisateur.php?id='.$nom['id'].'">Modifier</a>';
-                echo '<a class="deco" href="index.php?action=delete&id='.$nom['id'].'"> Supprimer</a><br>';
+                echo '<a class="deco" href="edit_utilisateur.php?update&id='.$nom['id'].'">Modifier</a>';
+                echo '<a class="deco" href="inscription.php?action=delete&id='.$nom['id'].'"> Supprimer</a><br>';
 
         }
                 

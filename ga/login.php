@@ -54,7 +54,7 @@ if(isset($_POST['nom'])) {
 						<input type="password" name="mdp" class="form-control" id="pwd">
 				</div>
 
-					<button type="submit" class="btn btn-default">Valider</button>
+					<button type="submit" class=".btn_sauv">Valider</button>
 			</form>
 		</div>
 	</div>

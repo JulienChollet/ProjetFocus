@@ -125,10 +125,10 @@ class artiste {
             <label for="nationalite">nationalité</label>
               <input class="form-control"type="text" name="nationalite" value="<?php echo $this->nationalite ?>">
             <label for="periode">période</label>
-              <textarea class="form-control" name="periode" value="<?php echo $this->periode ?>"></textarea> 
+            <input class="form-control" name="periode" placeholder="2000-2010" value="<?php echo $this->periode ?>"> 
             <label for="biographie">biographie</label>
-              <textarea class="form-control" name="biographie" value="<?php echo $this->biographie ?>" ></textarea>  
-              <input class="deco" type="submit" value="<?php echo $submit==''?'Valider':$submit; ?>">
+              <textarea class="form-control" name="biographie"><?php echo $this->biographie ?></textarea>  
+              <input class="btn_sauv" type="submit" value="<?php echo $submit==''?'Valider':$submit; ?>">
           </form>
         </div>
       </div>
@@ -136,13 +136,13 @@ class artiste {
     <?php
   }
 
-function delete() {
+function delete_artiste() {
         $resDeleteArtiste = sql("
             DELETE FROM artiste
             WHERE id='".$this->id."'
             ");
         
-        if($resDeleteUser) {
+        if($resDeleteArtiste) {
             return TRUE;
         }
         else {

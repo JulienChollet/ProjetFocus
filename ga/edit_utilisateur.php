@@ -21,17 +21,18 @@ include('header.php');
 //modification de profil donc on initialise le session_start 
 session_start();
 
-
+if (isset($_GET['id'])) {
 // creation du nouvel objet utilisateur 
 //on va chercher dans l'url l'id que l'on vient d'envoyer
 $utilisateur = new Utilisateur($_GET['id']);
 $utilisateur->form('edit_utilisateur.php','modifier');
- 
+}
 //même principe que pour l'inscription, verification des champs, et des mdp
 
 
-if(isset($_POST['utilisateur'] )){
-    $utilisateur->setUsername($_POST['nom']);
+if(isset($_POST['nom'] )){
+   
+    $utilisateur->setNom($_POST['nom']);
     $utilisateur->setEmail($_POST['email']);
     $utilisateur->setAutorisations($_POST['autorisations']);
 

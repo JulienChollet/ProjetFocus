@@ -90,7 +90,7 @@ class utilisateur {
     }
     else{
       // Sinon on fait un update
-      $res = sql("UPDATE nom SET
+      $res = sql("UPDATE utilisateur SET
         nom ='".addslashes($this->nom)."',
         email = '".addslashes($this->email)."',
         autorisations = '".addslashes($this->autorisations)."'
@@ -159,8 +159,8 @@ class utilisateur {
                       <label for="password">Mot de Passe</label>
                         <input class="form-control" type="password" name="mdp1">
                         <input class="form-control" type="password" name="mdp2">
-
                       <input class="deco" type="submit" value="<?php echo $submit==''?'Envoyer':$submit; ?>">
+
                     </form>
                   </div>
               </div>

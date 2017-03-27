@@ -17,10 +17,10 @@ a{
 }
 /*------------------------------------------------------------------------*/
 header{
-	background-color: #FF9900;
+	background-color: #00CCCC;
 }
 	nav{
-		background-color: #894524;
+		background-color: #004358;
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -37,30 +37,35 @@ header{
 			padding-left: 0px;
 			padding-right: 0px;
 		}
-			li{
-				height: 46px;
+			.nav_ul{
+				margin-top: 75px;
 				display: flex;
-				align-items: center;
-				border-left: 5px #894524 solid;
+				flex-direction: column;
 			}
-				.nav li a {
-					height: 100%;
+				.nav_li{
+					height: 46px;
+					display: flex;
+					align-items: center;
+					border-left: 5px #004358 solid;
 				}
-					li:hover{
-						background-color: #e3e3e3;
-						border-left: 5px #4E961E solid;
+				.nav_li:hover{
+					background-color: #e3e3e3;
+					border-left: 5px #4E961E solid;
+				}
+					.nav_li_a {
+						height: 100%;
 					}
-					li a:hover{
-						display: inline-block;
-						color: #2B6306;
-						width: 100%;
-					}
+						.nav_li_a:hover{
+							display: inline-block;
+							color: #2B6306;
+							width: 100%;
+						}
 	.entete{
 		padding-right: 0px;
 		margin-left: 160px;
 	}
 		.head{
-			background-color: #FF9900;
+			background-color: #00CCCC;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -72,26 +77,56 @@ header{
 			text-align: center
 			margin-top: 0px;
 		}
+.ligne{
+	background-color: #1F8A70;
+	height: 6px;
+	margin-left: 175px;
+}
 /*--------------------------------------------------------------*/
-.deco{
+.btn_deco{
 	float: left;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 205px;
 	height:35px;
-	background-color: #894524;
+	background-color: #1F8A70;
 	color: white;
 	border-radius: 5px;
 	border: solid 1px;
 }
-.deco:hover{
-	background-color: #eee;
-	color: #2B6306;
-	border: solid 1px #894524;
+	.btn_deco:hover{
+		text-decoration: none;
+		background-color: #eee;
+		color: #2B6306;
+		border: solid 1px #004358;
+	}
+.btn_sauv{
+	background-color: #1F8A70;
+	color: white;
+	border-radius: 5px;
+	border: solid 1px;
 }
-/*------------------------------------------------------------------------*/
+	.btn_sauv:hover{
+		background-color: #eee;
+		color: #2B6306;
+		border: solid 1px #004358;
+	}
 
-/*							Pour utilisé Bootstrap						  */
-
+.btn_annul{
+	background-color: #1F8A70;
+	color: white;
+	border-radius: 5px;
+	border: solid 1px;
+}
+	.btn_annul:hover{
+		background-color: #f13131;
+		color: #ffffff;
+		border: solid 1px #ff0000;
+	}
 /*------------------------------------------------------------------------*/
+/*---------------------------- Form_multiple -----------------------------*/
+.form_multiple{
+	margin-top: 20px;
+	margin-left: 175px;
+}
