@@ -5,7 +5,7 @@
 //																*
 //***************************************************************
 
-class descriptionOeuvre {
+class description_expo {
 	
  	private $id;
  	private $francais;
@@ -91,7 +91,7 @@ class descriptionOeuvre {
 	 	return $this->id_expo;
 	 }
 //***************************************************************
-		function miseajour(){
+		function syncDb_description_expo(){
 		//si j'ai un ID 
 		if (isset($this->id)) {
 			//alors je fais une requete SQL pour fair la MJA
@@ -123,7 +123,7 @@ class descriptionOeuvre {
 			}
 	}
 //***************************************************************
- 	function supprimer(){
+ 	function delete_description_expo(){
  		if (isset($this->id)) {
  			$requete = sql("DELETE FROM description_expo WHERE '".$this->id."'");
  		}

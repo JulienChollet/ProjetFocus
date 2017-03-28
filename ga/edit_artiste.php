@@ -4,7 +4,7 @@
         Projet Focus
         creation date : 11 jan 2017
         edit_utilisateur.php
-----modification du profil utilisateur-----
+----modification du profil artiste-----
 -----------------------------------------*/
 
 //variable d'affichage 
@@ -53,5 +53,3 @@ header('Location:index.php');
 
 
 
-
-// include('footer.php')

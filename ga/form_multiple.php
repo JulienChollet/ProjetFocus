@@ -1,7 +1,7 @@
 <?php
 
 
-	$expo = new descriptionExpo();
+	$expo = new Description_expo();
 	$expo->miseajour();
 	//if (isset($_POST['id'])) {
 	//	$expo->setfrancais($_POST['texte']);

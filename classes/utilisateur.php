@@ -189,17 +189,4 @@ function delete() {
 
 }
 
-// function update (){
-//         $resUpdateUser = sql("
-//             UPDATE FROM utilisateur
-//             WHERE  id='".$this->id."'
-//             ");
-//         if($resDeleteUser) {
-//             return TRUE;
-//             header('Location: utilisateur.php');
-//         }
-//         else {
-//             return FALSE;
-//         }
-// }
 
