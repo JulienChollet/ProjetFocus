@@ -18,48 +18,64 @@ include('header.php');
 
 
 
-//modification de profil donc on initialise le session_start 
-session_start();
 
-if(isset($_GET['id'])) {
-    $id = $_GET['id'];
-}
 
-// if(isset($_POST['id'])) {
-//     $id= $_POST['id'];
-// }
 
-if(isset($id)) {
-// creation du nouvel objet utilisateur 
-//on va chercher dans l'url l'id que l'on vient d'envoyer
+if(isset($_GET['id']) && isset($_GET['action']) && $_GET['action'] == 'edit') {
 
-$utilisateur = new Utilisateur($id);
-$utilisateur->form('inscription.php','modifier');
+    $utilisateur = new Utilisateur($_GET['id']);
+    $utilisateur->form('edit_utilisateur.php','modifier');
 
 
 }
-//même principe que pour l'inscription, verification des champs, et des mots de passe
 
+if (isset($_POST['nom'])) {
+    if (isset($_POST['id']) && $_POST['id']!='') {
+        $utilisateur = new Utilisateur($_POST['id']);
+        $utilisateur->setNom($_POST['nom']);
+        $utilisateur->setEmail($_POST['email']);
+        $utilisateur->setAutorisations($_POST['autorisations']);
 
-if(isset($_POST['nom'] ) && isset($_POST['id']) && $_POST['id'] !='') { 
-    $utilisateur = new Utilisateur($_POST['id']);  
-    $utilisateur->setNom($_POST['nom']);
-    $utilisateur->setEmail($_POST['email']);
-    $utilisateur->setAutorisations($_POST['autorisations']);
-
-    if($_POST['mdp1'] == $_POST['mdp2']){
-        $sync = $utilisateur->syncDb_utilisateur();
-        if($sync) {
-        $utilisateur->updateMdp($_POST['mdp1']);
+        if($_POST['mdp1'] == $_POST['mdp2']){
+            $sync = $utilisateur->syncDb_utilisateur();
+            if($sync) {
+            $utilisateur->updateMdp($_POST['mdp1']);
+            }
+            elseif ($sync == False ) {
+                echo'<section class="container">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-6">
+                        une erreur est survenue lors de la saisie.
+                    </section>
+                        </div>
+                            </div>';
+            }
         }
-
+        else{
+            echo'<section class="container">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-6">
+                            Vos mots de passe ne sont pas identiques</br>
+                 </section>
+                        </div>
+                            </div>';
+        }
     }
     else{
-        $error = "Vos mots de passe ne sont pas identiques";
+        $utilisateur->setNom($_POST['nom']);
+        $utilisateur->setEmail($_POST['email']);
+        $utilisateur->setAutorisations($_POST['autorisations']);
+        $sync = $utilisateur->syncDb_utilisateur();
     }
+header('Location:creation_utilisateur.php');
+
 }
 
-   
+//même principe que pour la creation du profil, verification des champs, et des mots de passe
+
+
+
+
 
 
 

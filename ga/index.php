@@ -23,6 +23,7 @@ $title = 'Bienvenue sur Focus';
 include('header.php');
 
 
+// Droits d'administration
 
 if ( isset($_SESSION['id']) && $_SESSION['autorisations'] == '1'){  
     echo '
@@ -34,27 +35,19 @@ if ( isset($_SESSION['id']) && $_SESSION['autorisations'] == '1'){
                 </div>
             </section>';
 }
+
+// on genère un formulaire
+
     $artiste = new Artiste();
     $artiste->form_artiste('edit_artiste.php');
 
 if (isset($_GET['action']) && $_GET['action'] == 'delete') {
     $artiste = new Artiste($_GET['id']);
     $delete_artiste = $artiste->delete_artiste();
-    // essaie de mettre des echo genre : 
-     // echo "on fait bien le delete"; var_dump($test); // si $test est FALSE il y a un problème avec ta requête ou ta base de données
+    
 }
 
 
-
-// if(isset($_POST['pseudo_nom'])){
-//     $artiste = new Artiste();
-//     $artiste->setPseudo_nom($_POST['pseudo_nom']);
-//     $artiste->setNationalite($_POST['nationalite']);
-//     $artiste->setPeriode($_POST['periode']);
-//     $artiste->setBiographie($_POST['biographie']);
-//     $sync = $artiste->syncDb_artiste();
-
-// } 
 ?>
 <section class="container">
         <div class="row">

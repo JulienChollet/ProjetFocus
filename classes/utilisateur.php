@@ -160,7 +160,7 @@ class utilisateur {
                         <input class="form-control" type="password" name="mdp1">
                         <input class="form-control" type="password" name="mdp2">
                         <input type="hidden" name="id" value="<?php echo $this->id; ?>">
-                      <input class="btn_sauv" type="submit" value="<?php echo $submit==''?'Envoyer':$submit; ?>">
+                        <input class="btn_sauv" type="submit" value="<?php echo $submit==''?'Envoyer':$submit; ?>">
 
                     </form>
                   </div>
