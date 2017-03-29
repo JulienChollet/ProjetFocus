@@ -127,8 +127,8 @@ function setPhoto($photo) {
 
               
                 <?php
-                echo '<a class="btn_deco" href="edit_oeuvre.php?action=edit&id='.$titre['id'].'">Modifier</a>';
-                echo '<a class="btn_deco" href="nouv_oeuvre.php?action=delete&id='.$titre['id'].'"> Supprimer</a><br>';
+                echo '<a class="btn btn-default btn_sauv" href="edit_oeuvre.php?action=edit&id='.$titre['id'].'">Modifier</a>';
+                echo '<a class="btn btn-default btn_annul" href="nouv_oeuvre.php?action=delete&id='.$titre['id'].'"> Supprimer</a><br>';
 
         }
                 

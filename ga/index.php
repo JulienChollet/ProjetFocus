@@ -29,8 +29,8 @@ if ( isset($_SESSION['id']) && $_SESSION['autorisations'] == '1'){
     echo '
             <section class="container">
                 <div class="row">
-                    <div class="col-md-offset-3 col-md-6">
-                        <a href="creation_utilisateur.php" class="btn_deco ">Création et Modification profil</a>
+                    <div class="col-xs-offset-3 col-xs-6">
+                        <a href="creation_utilisateur.php" class="btn btn-default btn_sauv ">Création et Modification profil</a>
                     </div>
                 </div>
             </section>';
@@ -51,7 +51,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete') {
 ?>
 <section class="container">
         <div class="row">
-            <div class="col-md-offset-3 col-md-6">
+            <div class="col-xs-offset-3 col-xs-6">
     <label for="pseudo_nom">Artiste</label><br>
         <?php
         
@@ -67,9 +67,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete') {
 
               
                 <?php
-                echo '<a class="btn_deco" href="edit_artiste.php?action=edit&id='.$nom['id'].'">Modifier</a>';
-                echo '<a class="btn_deco" href="index.php?action=delete&id='.$nom['id'].'"> Supprimer</a><br>';
-
+                echo '<a class="btn btn-default btn_sauv" href="edit_artiste.php?action=edit&id='.$nom['id'].'">Modifier</a>';
+                echo '<a class="btn btn-default btn_annul" href="index.php?action=delete&id='.$nom['id'].'"> Supprimer</a><br>';
+         echo'</form>';
+        
         }
-                
 ?>
+
+       

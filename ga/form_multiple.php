@@ -1,14 +1,4 @@
-<?php
 
-
-	$expo = new Description_expo();
-	$expo->miseajour();
-	//if (isset($_POST['id'])) {
-	//	$expo->setfrancais($_POST['texte']);
-	//	$expo->setfrancais($_POST['texte2']);
-	//}
-
-?>
 <section class="container form_multiple">
 	<!--****************** Menu ******************-->
 	  <ul class="nav nav-tabs " role="tablist">
@@ -34,13 +24,13 @@
 			
 			<!-- Français -->
 	   		<div role="tabpanel" class="tab-pane fade in active" id="francais">
-	    		<form action="nouv_expo" method="POST" class="form-group" >
+	    		<form action="nouv_expo.php" method="POST" class="form-group" id="formfr">
 	    			<label>Description</label>
-	    			<textarea placeholder="Votre texte" rows="5" class="form-control" name="texte"></textarea>
+	    			<textarea placeholder="Votre texte" rows="5" class="form-control" name="txtfr"></textarea>
 	    			<label>Mot de l'auteur</label>
-	    			<textarea placeholder="Votre texte" rows="5" class="form-control" name="texte2"></textarea>
+	    			<textarea placeholder="Votre texte" rows="5" class="form-control" name="txtfr2"></textarea>
 	    			<br/>
-	    			<input type="submit" name="record" class="btn btn_sauv" value="Enregister" onclick="verification()">
+	    			<input type="submit" name="record" class="btn btn_sauv" value="Enregister" >
 	    			<input type="submit" name="cancel" class="btn btn_annul" value="Annuler">
 	    		</form>
 	    	</div>
@@ -49,9 +39,9 @@
 	    	<div role="tabpanel" class="tab-pane fade" id="allemand">
 	    		<form action="#" method="POST" class="form-group" >
 	    			<label>Beschreibung</label>
-	    			<textarea placeholder="Ihren Text" rows="5" class="form-control"></textarea>
+	    			<textarea placeholder="Ihren Text" rows="5" class="form-control" name="txtde"></textarea>
 	    			<label>Wort des Autors</label>
-	    			<textarea placeholder="Ihren Text" rows="5" class="form-control"></textarea>
+	    			<textarea placeholder="Ihren Text" rows="5" class="form-control" name="txtde2"></textarea>
 	    			<br/>
 	    			<input type="submit" class="btn btn_sauv" value="Enregister" onclick="verification()">
 	    			<input type="submit" class="btn btn_annul" value="Annuler">
@@ -62,9 +52,9 @@
 	    	<div role="tabpanel" class="tab-pane fade" id="anglais">
 	    		<form action="#" method="POST" class="form-group" >
 	    			<label>Description</label>
-	    			<textarea placeholder="Your text" rows="5" class="form-control"></textarea>
+	    			<textarea placeholder="Your text" rows="5" class="form-control" name="txten"></textarea>
 	    			<label>Author's Message</label>
-	    			<textarea placeholder="Your text" rows="5" class="form-control"></textarea>
+	    			<textarea placeholder="Your text" rows="5" class="form-control" name="txten2"></textarea>
 	    			<br/>
 	    			<input type="submit" class="btn btn_sauv" value="Enregister" onclick="verification()">
 	    			<input type="submit" class="btn btn_annul" value="Annuler">
@@ -75,9 +65,9 @@
 	    	<div role="tabpanel" class="tab-pane fade" id="chinois">
 	    		<form action="#" method="POST" class="form-group" >
 	    			<label>描述</label>
-	    			<textarea placeholder="文本" rows="5" class="form-control"></textarea>
+	    			<textarea placeholder="文本" rows="5" class="form-control" name="txtch"></textarea>
 	    			<label>从笔者词</label>
-	    			<textarea placeholder="文本" rows="5" class="form-control"></textarea>
+	    			<textarea placeholder="文本" rows="5" class="form-control" name="txtch2"></textarea>
 	    			<br/>
 	    			<input type="submit" class="btn btn_sauv" value="Enregister" onclick="verification()">
 	    			<input type="submit" class="btn btn_annul" value="Annuler">
@@ -88,9 +78,9 @@
 	    	<div role="tabpanel" class="tab-pane fade" id="russe">
 	    		<form action="#" method="POST" class="form-group" >
 	    			<label>Oписание</label>
-	    			<textarea placeholder="ваш текст" rows="5" class="form-control"></textarea>
+	    			<textarea placeholder="ваш текст" rows="5" class="form-control" name="txtru"></textarea>
 	    			<label>Слово от автора</label>
-	    			<textarea placeholder="ваш текст" rows="5" class="form-control"></textarea>
+	    			<textarea placeholder="ваш текст" rows="5" class="form-control" name="txtru2"></textarea>
 	    			<br/>
 	    			<input type="submit" class="btn btn_sauv" value="Enregister" onclick="verification()">
 	    			<input type="submit" class="btn btn_annul" value="Annuler">

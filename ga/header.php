@@ -57,7 +57,7 @@ foreach($folder as $file) {
 						</a>
 					</li>
 					<li class="nav_li">
-						<a href="" class="nav_li_a">
+						<a href="../visiteur/index.php" class="nav_li_a">
 							<span class="fa fa-chrome"></span> Site Publique
 						</a>
 					</li>

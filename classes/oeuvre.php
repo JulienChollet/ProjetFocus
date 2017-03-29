@@ -186,7 +186,7 @@ function form_oeuvre($target, $submit = ''){
   ?> 
     <section class="container">
       <div class="row">
-        <div class="col-md-offset-3 col-md-6">
+        <div class="col-xs-offset-3 col-xs-6">
 
           <form class="form-group" action="<?php echo $target; ?>" method="post">
 
@@ -197,10 +197,10 @@ function form_oeuvre($target, $submit = ''){
                 <input class="form-control" type="text" name="type" value="<?php echo $this->type ?>">
 
                 <label for="date_entre">date d'arrrivée</label>
-                <input class="form-control" type="date" name="date_entre" value="<?php echo $this->date_entre ?>"> 
+                <input class="form-control" type="date" placeholder="jj/mm/aaaa" name="date_entre" value="<?php echo $this->date_entre ?>"> 
 
                 <label for="date_sortie">date de sortie</label>
-                <input class="form-control" type="date" name="date_sortie" value="<?php echo $this->date_sortie ?>">
+                <input class="form-control" type="date" placeholder="jj/mm/aaaa" name="date_sortie" value="<?php echo $this->date_sortie ?>">
 
                 <label for="periode">période</label>
                 <input class="form-control" type="text" placeholder="2000-2010" name="periode" value="<?php echo $this->periode ?>"> 
@@ -231,9 +231,9 @@ function form_oeuvre($target, $submit = ''){
                   ?>                
                 </select>
                 <label for="photo">photo</label>
-                <input class="form-control" type="file" name="photo" value="<?php echo $this->photo ?>"> 
+                <input class="btn btn-default btn_sauv " type="file" name="photo" value="<?php echo $this->photo ?>"> 
                 <input type="hidden" name="id" value="<?php echo $this->id ?>">    
-                <input class="deco" type="submit" value="<?php echo $submit==''?'Valider':$submit; ?>">
+                <input class="btn btn-default btn_sauv" type="submit" value="<?php echo $submit==''?'Valider':$submit; ?>">
           </form>
         </div>
       </div>

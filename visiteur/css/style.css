@@ -1,0 +1,142 @@
+/****************************************************************/
+/*************************** General ****************************/
+/****************************************************************/
+body{
+	height: 100%;
+	width: 100%;
+}
+
+/****************************************************************/
+/*							header.php					   		*/
+/****************************************************************/
+/*************************** Header *****************************/
+
+
+/*-------------- Ligne 1 ----------------*/
+.ligne_un_header{
+	background-color: #004358;
+	min-height: 72px;
+}
+	.h1{
+		text-align: center;
+		color: white;
+		margin-top: 15px;
+		margin-bottom:15px;
+	}
+
+/*-------------- Ligne 2 ----------------*/
+.ligne_deux_header{
+	background-color: #00CCCC;
+	min-height: 50px;
+}
+	ul{
+		text-align: center;
+		padding: 0px;
+		margin-bottom: 0px;
+	}
+		.icone_nav{
+			font-size: 3.5em;
+			color: white;
+			height: 100%;
+			width: 100%;
+		}
+		ul:hover{
+			background-color: #1F8A70;
+		}
+			.dropdown-menu{
+				background-color: #1F8A70;
+				margin-top: 0px;
+    			border-top-width: 0px;
+    			border-left-width: 0px;
+    			border-right-width: 0px;
+    			border-radius: 0px;
+
+			}
+
+
+			li{
+				color: white;
+				height: 46px;
+				padding-left: 50px;
+				display: flex;
+				align-items: center;
+			}
+				li:hover{
+					color: black;
+					background-color: white;
+				}
+
+	a{
+		text-align: center;
+	}
+
+/****************************************************************/
+/*						visiteur.php					   		*/
+/****************************************************************/
+/******************** Information Expo actuel *******************/
+
+.ligne_un_visiteur{
+	background-color: #BEDB39;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+	.gras{
+		font-weight: bold;
+	}
+	.marge{
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+/******************** Descriptions Oevres ***********************/
+.note{
+	background-color: #F6EAD4;
+	padding: 20px;
+	margin-top: 20px;
+}
+	.auteurnote{
+		font-family: 'Seaweed Script', cursive;
+	}
+	.ganote{
+		font-family: 'Seaweed Script', cursive;
+		font-family: 'Sansita', sans-serif;
+	}
+
+/****************************************************************/
+/*							footer.php					   		*/
+/****************************************************************/
+footer{
+	margin-top: 20px;
+}
+/************************* Prochainement ************************/
+.ligne_un_footer{
+	background-color: #BEDB39;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+	.icone_cal{
+		font-size: 3.5em;
+		height: 100%;
+		width: 100%;
+	}
+/************************* Renseignement ************************/
+.ligne_deux_footer{
+	background-color: #FFE11A;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+	.sous_ligne_deux_footer{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+		.icone_footer{
+			font-size: 2em;
+			text-align: center;
+		}
+/****************************************************************/
+/****************************************************************/
+/****************************************************************/

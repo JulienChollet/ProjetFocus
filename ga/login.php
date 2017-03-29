@@ -24,7 +24,13 @@ if(isset($_POST['nom'])) {
 		header('Location: index.php');
 	}
 	else {
-		echo 'le mot de passe ou le nom d\'utlisateur n\'est pas bon';
+		echo '<section class="container">
+                <div class="row">
+                    <div class="col-xs-offset-3 col-xs-6">
+						<p class="bg-danger alert" >le mot de passe ou le nom d\'utlisateur n\'est pas bon</p>
+			   		</div>
+                </div>
+            </section>';
 	}
 }
 ?>
@@ -43,19 +49,21 @@ if(isset($_POST['nom'])) {
 </head>
 <div class="container">
 	<div class="row">
-		<div>
-			<form method="post" action="login.php" >
-				<div class="form-group">
-					<label for="name">Nom d'utilisateur</label>
-						<input type="text" name="nom" class="form-control" id="name">
-				</div>
-				<div class="form-group">
-					<label for="pwd">Mot de passe:</label>
-						<input type="password" name="mdp" class="form-control" id="pwd">
-				</div>
+		<div class="connexion">
+			<h1 class="titre-co">Projet Focus</h1>
+				<div class="ligne-co"></div>
+					<form method="post" action="login.php" class="form-co">
+						<div class="form-group">
+							<label for="name">Nom d'utilisateur</label>
+								<input type="text" name="nom" class="form-control" id="name">
+						</div>
+						<div class="form-group">
+							<label for="pwd">Mot de passe:</label>
+								<input type="password" name="mdp" class="form-control" id="pwd">
+						</div>
 
-					<button type="submit" class=".btn_sauv">Valider</button>
-			</form>
+							<button type="submit" class="btn btn-default btn_sauv">Valider</button>
+					</form>
 		</div>
 	</div>
 </div>

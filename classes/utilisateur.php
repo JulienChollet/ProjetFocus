@@ -142,7 +142,7 @@ class utilisateur {
     ?>
           <section class="container">
               <div class="row">
-                  <div class="col-md-offset-3 col-md-6">
+                  <div class="col-xs-offset-3 col-xs-6">
                     <form class="form-group" action="<?php echo $target; ?>" method="post">
                       <label for="nom">Nom d'utilisateur</label>
                         <input class="form-control" type="text" name="nom" value="<?php echo $this->nom; ?>">
@@ -160,7 +160,7 @@ class utilisateur {
                         <input class="form-control" type="password" name="mdp1">
                         <input class="form-control" type="password" name="mdp2">
                         <input type="hidden" name="id" value="<?php echo $this->id; ?>">
-                        <input class="btn_sauv" type="submit" value="<?php echo $submit==''?'Envoyer':$submit; ?>">
+                        <input class="btn btn-default btn_sauv" type="submit" value="<?php echo $submit==''?'Envoyer':$submit; ?>">
 
                     </form>
                   </div>

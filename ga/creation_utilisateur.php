@@ -40,21 +40,21 @@ if(isset($_POST['nom'] )&& $_POST['nom'] != ''){
             elseif ($sync == False ) {
                 echo'<section class="container">
                         <div class="row">
-                            <div class="col-md-offset-3 col-md-6">
-                        une erreur est survenue lors de la saisie.
-                    </section>
+                            <div class="col-xs-offset-3 col-xs-6">
+                                <p class="bg-danger alert">une erreur est survenue lors de la saisie.</p>
+                            </div>
                         </div>
-                            </div>';
+                    </section>';
             }
         }
         else{
             echo'<section class="container">
                     <div class="row">
-                        <div class="col-md-offset-3 col-md-6">
-                            Vos mots de passe ne sont pas identiques</br>
-                 </section>
+                        <div class="col-xs-offset-3 col-xs-6">
+                            <p class="bg-danger alert">Vos mots de passe ne sont pas identiques.</p></br>
                         </div>
-                            </div>';
+                    </div>
+                </section>';
         }
     }
 }
@@ -66,10 +66,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete'){
     $delete_utilisateur = $utilisateur->delete();
         echo'   <section class="container">
                     <div class="row">
-                        <div class="col-md-offset-3 col-md-6">vous avez bien supprimé le profil</br>
-                </section>
+                        <div class="col-xs-offset-3 col-xs-6"><p class="bg-danger alert">vous avez bien supprimé le profil.</p></br>
                         </div>
-                            </div>';
+                    </div>
+                </section>';
 }
 
 ?>
@@ -77,7 +77,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete'){
 
     <section class="container">
         <div class="row">
-            <div class="col-md-offset-3 col-md-6">
+            <div class="col-xs-offset-3 col-xs-6">
         <label for="nom">Nom</label><br>
         <?php
         
@@ -92,8 +92,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete'){
 
               
                 <?php
-                echo '<a class="btn_deco" href="edit_utilisateur.php?action=edit&id='.$nom['id'].'">Modifier</a>';
-                echo '<a class="btn_deco" href="creation_utilisateur.php?action=delete&id='.$nom['id'].'"> Supprimer</a><br>';
+                echo '<a class="btn btn-default btn_sauv" href="edit_utilisateur.php?action=edit&id='.$nom['id'].'">Modifier</a>';
+                echo '<a class="btn btn-default btn_annul" href="creation_utilisateur.php?action=delete&id='.$nom['id'].'"> Supprimer</a><br>';
 
         }
                 
