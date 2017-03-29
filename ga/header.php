@@ -84,7 +84,7 @@ foreach($folder as $file) {
 					<h1 class="h1"><?php echo $title; ?></h1>
 				</div>
 				<div class="col-xs-4 hidden-md hidden-lg ">
-					<a href="logout.php" class="deco">
+					<a href="logout.php" class="btn_deco">
 						<span class="fa fa-user-o">Deconnexion</a></span>
 					</a>
 				</div>

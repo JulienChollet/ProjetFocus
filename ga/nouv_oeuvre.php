@@ -112,9 +112,9 @@ function setPhoto($photo) {
 	}
 ?>
 <section class="container">
-        <div class="row">
-            <div class="col-md-offset-3 col-md-6">
-    		<label for="nom">derniers œuvres enregistrées</label><br>
+   <div class="row">
+        <div class="col-xs-offset-3 col-xs-6">
+    		<label for="nom"><h3>derniers œuvres enregistrées</h3></label><br>
 <?php
 	
 		$derniere_oeuvre = sql("SELECT nom, id FROM oeuvre");
@@ -129,7 +129,9 @@ function setPhoto($photo) {
                 <?php
                 echo '<a class="btn btn-default btn_sauv" href="edit_oeuvre.php?action=edit&id='.$titre['id'].'">Modifier</a>';
                 echo '<a class="btn btn-default btn_annul" href="nouv_oeuvre.php?action=delete&id='.$titre['id'].'"> Supprimer</a><br>';
-
-        }
-                
+		echo'</form>';
+        }       
 ?>
+		</div>
+	</div>
+</section>
