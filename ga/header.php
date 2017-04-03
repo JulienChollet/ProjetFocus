@@ -32,7 +32,8 @@ foreach($folder as $file) {
 	<header class="container-fluid"><!-- tableau 2 -->
 		<nav class="row">
 				<ul class="col-xs-12 nav nav_ul">
-					<li class="nav_li"><a href="index.php" class="nav_li_a">
+					<li class="nav_li">
+						<a href="index.php" class="nav_li_a">
 							<span class="fa fa-home"></span> Accueil
 						</a>
 					</li>
