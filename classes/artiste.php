@@ -122,15 +122,15 @@ class artiste {
         <div class="col-xs-offset-3 col-xs-6">
           <form class="form-group" action="<?php echo $target; ?>" method="post">
               <label for="pseudo_nom">Nom de l'artiste</label>
-              <input class="form-control" type="text" name="pseudo_nom" value="<?php echo $this->pseudo_nom ?>">
+                <input class="form-control" type="text" name="pseudo_nom" value="<?php echo $this->pseudo_nom ?>">
               <label for="nationalite">nationalité</label>
-              <input class="form-control"type="text" name="nationalite" value="<?php echo $this->nationalite ?>">
+                <input class="form-control"type="text" name="nationalite" value="<?php echo $this->nationalite ?>">
               <label for="periode">période</label>
-              <input class="form-control" name="periode" placeholder="2000-2010" value="<?php echo $this->periode ?>"> 
+                <input class="form-control" name="periode" placeholder="2000-2010" value="<?php echo $this->periode ?>"> 
               <label for="biographie">biographie</label>
-              <textarea class="form-control" name="biographie"><?php echo $this->biographie ?></textarea>
-              <input type="hidden" name="id" value="<?php echo $this->id ?>">  
-              <input class="btn btn_default btn_sauv" type="submit" value="<?php echo $submit==''?'Valider':$submit; ?>">
+                <textarea class="form-control" name="biographie"><?php echo $this->biographie ?></textarea>
+                <input type="hidden" name="id" value="<?php echo $this->id ?>">  
+                <input class="btn btn_default btn_sauv" type="submit" value="<?php echo $submit==''?'Valider':$submit; ?>">
           </form>
         </div>
       </div>

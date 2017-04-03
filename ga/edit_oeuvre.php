@@ -30,10 +30,11 @@ if(isset($_POST['nom'])){
         $oeuvre->setDate_entre($_POST['date_entre']);
         $oeuvre->setDate_sortie($_POST['setDate_sortie']);
         $oeuvre->setPeriode($_POST ['periode']);
-        // $oeuvre->setId_description($_POST['id_description']);
+        $oeuvre->setId_artiste($_POST ['id_artiste']);
+        $oeuvre->setId_description($_POST['id_description']);
         $oeuvre->setDimension($_POST['dimension']);
         $oeuvre->setPhoto($_POST['photo']);
-        // $oeuvre->setQr_code($_POST['Qr_code']);
+        $oeuvre->setQr_code($_POST['Qr_code']);
         $sync = $oeuvre->syncDb_oeuvre();
         
     }
@@ -45,10 +46,11 @@ if(isset($_POST['nom'])){
         $oeuvre->setDate_entre($_POST['date_entre']);
         $oeuvre->setDate_sortie($_POST['setDate_sortie']);
         $oeuvre->setPeriode($_POST ['periode']);
-        // $oeuvre->setId_description($_POST['id_description']);
+        $oeuvre->setId_artiste($_POST ['id_artiste']);
+        $oeuvre->setId_description($_POST['id_description']);
         $oeuvre->setDimension($_POST['dimension']);
         $oeuvre->setPhoto($_POST['photo']);
-        // $oeuvre->setQr_code($_POST['Qr_code']);
+        $oeuvre->setQr_code($_POST['Qr_code']);
         $sync = $oeuvre->syncDb_oeuvre();
     }
    header('Location:nouv_oeuvre.php'); 

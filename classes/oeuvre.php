@@ -104,14 +104,19 @@ function __construct($id = 0) {
 
   }
 
-  function getId_expo(){
-    return $this->id_expo;
+  function setId_artiste($id_artiste){
+    return $this->id_artiste = $id_artiste;
+    return TRUE;
   }
 
   function getId_description(){
     return $this->id_description;
   }
-
+  
+  function setId_description($id_description){
+    return $this->id_description = $id_description;
+    return TRUE;
+  }
   function getDimension(){
     return $this->dimension;
 
@@ -146,13 +151,15 @@ function __construct($id = 0) {
 function syncDb_oeuvre() {
     if(empty($this->id)) {
       // si $this->id est vide, on fait un INSERT
-      $res = sql("INSERT INTO oeuvre (nom, type, date_entre, date_sortie, periode, id_artiste, dimension, photo, qr_code)
+      $res = sql("INSERT INTO oeuvre (nom, type, date_entre, date_sortie, periode, id_artiste, dimension, photo, qr_code) LEFT JOIN (creation.id_artiste, creation.id_oeuvre) 
         VALUES (
         '".addslashes($this->nom)."',
         '".addslashes($this->type)."',
         '".addslashes($this->date_entre)."',
         '".addslashes($this->date_sortie)."',
         '".addslashes($this->periode)."',
+        '".addslashes($this->id_artiste)."',
+        '".addslashes($this->id_description)."',    
         '".addslashes($this->dimension)."',
         '".addslashes($this->photo)."',
         '".addslashes($this->qr_code)."')
@@ -174,6 +181,8 @@ function syncDb_oeuvre() {
         date_entre = '".addslashes($this->date_entre)."',
         date_sortie = '".addslashes($this->date_sortie)."',
         periode = '".addslashes($this->periode)."',
+        id_artiste='".addcslashes($this->id_artiste)."',
+        id_description= '".addcslashes($this->id_description)."',
         dimension = '".addslashes($this->dimension)."',
         photo = '".addslashes($this->photo)."',
         qr_code = '".addslashes($this->qr_code)."'
@@ -207,7 +216,7 @@ function form_oeuvre($target, $submit = ''){
 
                 <label for="dimension">dimensions en centimètre</label>
                 <input class="form-control" type="text" name="dimension" placeholder="2000x2000x2000" value="<?php echo $this->dimension ?>">
-                <label for="auteur">Auteur(s)</label>
+                <label for="auteur">Auteur</label>
                 <select class="form-control" type="text" name="artiste">
                   <option selected="selected"></option>
                   <?php
@@ -216,17 +225,6 @@ function form_oeuvre($target, $submit = ''){
                       foreach ($nb_artiste as $nom){
                   ?>
                   <option><?php echo $nom['pseudo_nom']; ?></option>  
-                  <?php }
-                  ?>                
-                </select>
-                <select class="form-control" type="text" name="artiste">
-                  <option selected="selected"></option>
-                  <?php
-                    $nb_artiste = sql("SELECT pseudo_nom,id FROM artiste");
-        
-                      foreach ($nb_artiste as $nom){
-                  ?>
-                  <option value="<?php echo $this->id_artiste ?>"><?php echo $nom['pseudo_nom']; ?></option>  
                   <?php }
                   ?>                
                 </select>
