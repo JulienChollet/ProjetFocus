@@ -27,7 +27,7 @@ a{
     	margin-bottom: 0px;
     	border-radius: 100px 20px 0px 0px;
     	padding-top: 10px;
-    	padding-bottom: 10px
+    	padding-bottom: 10px;
 	}
 	.ligne-co{
 		background-color: #1F8A70;
@@ -71,8 +71,13 @@ header{
 					background-color: #e3e3e3;
 					border-left: 5px #1F8A70 solid;
 				}
-					.nav_li_a {
+					/*.nav_li_a {
 						height: 100%;
+						padding: 10px 5px 10px 10px;
+					} se fait passer devant par la régle suivante dans bootstrap */
+					.nav > li > a {
+						height: 100%;
+						padding: 10px 5px 10px 10px;
 					}
 						.nav_li_a:hover{
 							display: inline-block;
@@ -90,16 +95,16 @@ header{
 			justify-content: center;
 			padding-left: 0px;
    			padding-right: 0px;
-    		margin-left: 15px;
+    		/*margin-left: 15px;*/
 		}
 		.h1{
-			text-align: center
+			text-align: center;
 			margin-top: 0px;
 		}
 .ligne{
 	background-color: #1F8A70;
 	height: 6px;
-	margin-left: 175px;
+	margin-left: 160px;
 }
 /*------------------------------- Boutton -------------------------------*/
 .btn_deco{
