@@ -4,26 +4,22 @@
 
 //----------------------- script pour formulaire multiple ---------------------
 $(document).ready(function() { //quand ma page a fini de charger
-
-	var enregistrement = $("[name='form']").submit(function(e){
+	// console.log('ok');
+	$('#formfr').submit(function(e){
 		e.preventDefault();
 		var values = [];
-		//dans ce form recup les infos de chaque textarea
 		$(this).find('textarea').each(function(){
-			//pousse les dans un tableau
 			values.push($(this).val());
 		});
-		//j'affiche le tableau avec les données
 		console.log(values);
-		//if(verification()){
-		//	$(this).enregistrement;
-		//}
+		console.log(verification());
+		// if(verification()){
+		// 	$(this).submit();
+		// }
 	});
-	
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 		// e.target // onglet activée
 		// e.relatedTarget// onglet précédement activer
-		//--------------------
 		//quand je change d'onglet demande d'enregistremnt
 		verification();
 	});
@@ -31,20 +27,8 @@ $(document).ready(function() { //quand ma page a fini de charger
 		$('#someTab').tab('show');
 	});
 });
-//-----------------------------------------------------
- function entrebdd(){
- 	if ( verifEnregistrement == true) {
- 		enregistrement.e.relatedTarget;
- 	}
- }
 
 //-----------------------------------------------------
-	// je recupe les info des textes 
-	function verif(){
-		var contenu = $('#formfr textarea[name=txtfr]').val();
-		
-	}
-//-----------------------------------------------------------------------------	
 //je vérifie s'il y a du contenue dans le textarea de la description
 function verifDescription(){
 	if(document.getElementsByTagName("TEXTAREA")[0].value == "" ){
@@ -88,13 +72,13 @@ function verification(){
 			if (conf == true) {
 				//l'utilisateur Valide l'enregistrement
 				var contenu = $('#formfr input[name=txtfr]'.val());
-				console.log('enregistrement');
-				var verifEnregistrement = true;
+				console.log('enregistrement'+ contenu);
+				var verifEnregi = true;
 			}
 			else{
 				//l'utilisateur Annule l'enregistrement
 				console.log('enregistrement ANNULER');
-				var verifEnregistrement = false;
+				var verifEnregi = false;
 			}
 			break;
 		//------------
@@ -104,13 +88,13 @@ function verification(){
 			if (conf == true) {
 				//l'utilisateur Valide l'enregistrement
 				var contenu = $('textarea[name=txtfr]').val();
-				console.log('enregistrement');
-				var verifEnregistrement = true;
+				console.log('enregistrement'+ contenu);
+				var verifEnregi = true;
 			}
 			else{
 				//l'utilisateur Annule l'enregistrement
 				console.log('enregistrement ANNULER');
-				var verifEnregistrement = false;
+				var verifEnregi = false;
 			}
 			break;
 		//------------
@@ -120,26 +104,32 @@ function verification(){
 			if (conf == true) {
 				//l'utilisateur Valide l'enregistrement
 				var contenu = $('textarea[name=txtfr2]').val();
-				console.log('enregistrement');
-				var verifEnregistrement = true;
+				console.log('enregistrement'+ contenu);
+				var verifEnregi = true;
 			}
 			else{
 				//l'utilisateur Annule l'enregistrement
 				console.log('enregistrement ANNULER');
-				var verifEnregistrement = false;
+				var verifEnregi = false;
 			}
 			break;
 		//------------
 		default:
 			var contenu = $('#formfr textarea[name=txtfr]').val();
-				console.log('enregistrement');
-				var verifEnregistrement = true;
+				console.log('enregistrement'+ contenu);
+				var verifEnregi = true;
 			break;
 	}
 
 	return 
 }
 //-----------------------------------------------------------------------------
+	// je recupe les info des textes 
+	function enregistrement(){
+		var contenu = $('#formfr textarea[name=txtfr]').val();
+		
+	}
+	
 
 
 //-----------------------------------------------------------------------------

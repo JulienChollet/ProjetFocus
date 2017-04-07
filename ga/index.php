@@ -26,8 +26,7 @@ include('header.php');
 // Droits d'administration
 
 if ( isset($_SESSION['id']) && $_SESSION['autorisations'] == '1'){  
-    echo '
-            <section class="container">
+    echo '<section class="container">
                 <div class="row">
                     <div class="col-xs-offset-3 col-xs-6">
                         <a href="creation_utilisateur.php" class="btn btn-default btn_sauv ">Création et Modification profil</a>
@@ -56,7 +55,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete') {
         <?php
         
         $nb_artiste = sql("SELECT pseudo_nom,id FROM artiste");
-        
+        //afficher également la période pour differencier les artistes
         foreach ($nb_artiste as $nom) 
         {
                     

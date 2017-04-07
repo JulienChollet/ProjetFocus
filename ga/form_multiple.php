@@ -24,7 +24,7 @@
 			
 			<!-- Français -->
 	   		<div role="tabpanel" class="tab-pane fade in active" id="francais">
-	    		<form action="nouv_expo.php" method="POST" class="form-group" id="formfr" name="form">
+	    		<form action="nouv_expo.php" method="POST" class="form-group" id="formfr">
 	    			<label>Description</label>
 	    			<textarea placeholder="Votre texte" rows="5" class="form-control" name="txtfr"></textarea>
 	    			<label>Mot de l'auteur</label>
@@ -37,7 +37,7 @@
 
 	    	<!-- Allemend -->
 	    	<div role="tabpanel" class="tab-pane fade" id="allemand">
-	    		<form action="#" method="POST" class="form-group" id="formal" name="form">
+	    		<form action="#" method="POST" class="form-group" >
 	    			<label>Beschreibung</label>
 	    			<textarea placeholder="Ihren Text" rows="5" class="form-control" name="txtde"></textarea>
 	    			<label>Wort des Autors</label>
@@ -50,7 +50,7 @@
 	    	
 	    	<!-- Anglais -->
 	    	<div role="tabpanel" class="tab-pane fade" id="anglais">
-	    		<form action="#" method="POST" class="form-group" id="forman" name="form">
+	    		<form action="#" method="POST" class="form-group" >
 	    			<label>Description</label>
 	    			<textarea placeholder="Your text" rows="5" class="form-control" name="txten"></textarea>
 	    			<label>Author's Message</label>
@@ -63,7 +63,7 @@
 	    	
 	    	<!-- Chinois -->
 	    	<div role="tabpanel" class="tab-pane fade" id="chinois">
-	    		<form action="#" method="POST" class="form-group" id="formch" name="form">
+	    		<form action="#" method="POST" class="form-group" >
 	    			<label>描述</label>
 	    			<textarea placeholder="文本" rows="5" class="form-control" name="txtch"></textarea>
 	    			<label>从笔者词</label>
@@ -76,7 +76,7 @@
 	    	
 	    	<!-- Russe -->
 	    	<div role="tabpanel" class="tab-pane fade" id="russe">
-	    		<form action="#" method="POST" class="form-group" id="formru" name="form">
+	    		<form action="#" method="POST" class="form-group" >
 	    			<label>Oписание</label>
 	    			<textarea placeholder="ваш текст" rows="5" class="form-control" name="txtru"></textarea>
 	    			<label>Слово от автора</label>
