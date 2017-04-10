@@ -12,7 +12,7 @@ include('header.php');
 
 
 
-// include('form_multiple.php');
+
 
 
 
@@ -22,6 +22,7 @@ include('header.php');
 if (isset($_GET['action']) && $_GET['action'] == 'delete'){
 	$oeuvre = new Oeuvre($_GET['id']);
 	$delete_oeuvre = $oeuvre->delete_oeuvre();
+	
 }
 
 
@@ -32,16 +33,16 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete'){
     		<label for="nom"><h3>derniers œuvres enregistrées</h3></label><br>
 <?php
 	
-		$derniere_oeuvre = sql("SELECT nom, id FROM oeuvre");
+		$derniere_oeuvre = sql("SELECT nom,id,photo FROM oeuvre");
 
 		foreach ($derniere_oeuvre as $titre ) {
 ?>
 		<form class="form-group" action="nouv_oeuvre.php" method="POST">
             
-             <input class="form-control" type="text" name="titre" value="<?php echo $titre['nom']; ?>">
-
+            <input class="form-control" type="text" name="nom" value="<?php echo $titre['nom']; ?>">
+			<img src="<?php echo $titre['photo']; ?>">
               
-                <?php
+<?php
                 echo '<a class="btn btn-default btn_sauv" href="edit_oeuvre.php?action=edit&id='.$titre['id'].'">Modifier</a>';
                 echo '<a class="btn btn-default btn_annul" href="nouv_oeuvre.php?action=delete&id='.$titre['id'].'"> Supprimer</a><br>';
 				echo'</form>';
@@ -50,3 +51,4 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete'){
 		</div>
 	</div>
 </section>
+

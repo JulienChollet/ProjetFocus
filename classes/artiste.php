@@ -11,7 +11,7 @@ class artiste {
   private $pseudo_nom;
   private $biographie;
   private $nationalite;
-  private $periode;
+  private $epoque;
   
 
 // on initilise à 0 pour dire que si on a un id(1.2.....) on a déjà un artiste donc on se connecte, 
@@ -19,12 +19,12 @@ class artiste {
 
   function __construct($id = 0) {
           if($id!=0) {
-              $res = sql("SELECT id,pseudo_nom,biographie,nationalite,periode FROM artiste WHERE id='".$id."'");
+              $res = sql("SELECT id,pseudo_nom,biographie,nationalite,epoque FROM artiste WHERE id='".$id."'");
               $artiste = $res[0];
               $this->id = $artiste['id'];
               $this->pseudo_nom = $artiste['pseudo_nom'];
               $this->nationalite = $artiste['nationalite'];
-              $this->periode = $artiste['periode'];
+              $this->epoque = $artiste['epoque'];
               $this->biographie = $artiste['biographie'];
             }
 
@@ -57,16 +57,13 @@ class artiste {
 
   }
 
-  function getPeriode(){
-    return $this->periode;
+  function getEpoque(){
+    return $this->epoque;
 
   }
 
-  function setPeriode($periode){
-    // $timestamp = strtotime($start_moment); //transforme la date en seconde on verifie le type de données
-    // if (is_int($timestamp)) { // on le compare à un nombre entier
-    //   $this->start_moment = date('Y-m-d H:i:s',$timestamp);
-    return $this->periode = $periode;
+  function setEpoque($epoque){
+    return $this->epoque = $epoque;
     return TRUE;
   }
 
@@ -83,12 +80,13 @@ class artiste {
   function syncDb_artiste() {
     if(empty($this->id)) {
       // si $this->id est vide, on fait un INSERT
-      $res = sql("INSERT INTO artiste (pseudo_nom, nationalite, periode, biographie)
+      $res = sql("INSERT INTO artiste (pseudo_nom, nationalite, epoque, biographie)
         VALUES (
         '".addslashes($this->pseudo_nom)."',
         '".addslashes($this->nationalite)."',
-        '".addslashes($this->periode)."',
-        '".addslashes($this->biographie)."')");
+        '".addslashes($this->epoque)."',
+        '".addslashes($this->biographie)."'
+        )");
      if($res !== FALSE) {
         $this->id = $res;
       
@@ -106,7 +104,7 @@ class artiste {
         biographie = '".addslashes($this->biographie)."',
         pseudo_nom ='".addslashes($this->pseudo_nom)."',
         nationalite = '".addslashes($this->nationalite)."',
-        periode = '".addslashes($this->periode)."'
+        epoque = '".addslashes($this->epoque)."'
         WHERE id='".addslashes($this->id)."';");
       return $res;
     }
@@ -125,10 +123,10 @@ class artiste {
                 <input class="form-control" type="text" name="pseudo_nom" value="<?php echo $this->pseudo_nom ?>">
               <label for="nationalite">nationalité</label>
                 <input class="form-control"type="text" name="nationalite" value="<?php echo $this->nationalite ?>">
-              <label for="periode">période</label>
-                <input class="form-control" name="periode" placeholder="2000-2010" value="<?php echo $this->periode ?>"> 
+              <label for="epoque">Période</label>
+                <input class="form-control" name="epoque" placeholder="2000-2010" value="<?php echo $this->epoque ?>"> 
               <label for="biographie">biographie</label>
-                <textarea class="form-control" name="biographie"><?php echo $this->biographie ?></textarea>
+                <textarea rows=" 15" class="form-control" name="biographie"><?php echo $this->biographie ?></textarea>
                 <input type="hidden" name="id" value="<?php echo $this->id ?>">  
                 <input class="btn btn_default btn_sauv" type="submit" value="<?php echo $submit==''?'Valider':$submit; ?>">
           </form>

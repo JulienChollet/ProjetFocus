@@ -31,7 +31,7 @@ if(isset($_POST['pseudo_nom'])){
         $artiste = new Artiste($_POST['id']);
         $artiste->setPseudo_nom($_POST['pseudo_nom']);
         $artiste->setNationalite($_POST['nationalite']);
-        $artiste->setPeriode($_POST['periode']);
+        $artiste->setEpoque($_POST['epoque']);
         $artiste->setBiographie($_POST['biographie']);
         $sync = $artiste->syncDb_artiste();
         
@@ -41,11 +41,11 @@ if(isset($_POST['pseudo_nom'])){
         $artiste = new Artiste();
         $artiste->setPseudo_nom($_POST['pseudo_nom']);
         $artiste->setNationalite($_POST['nationalite']);
-        $artiste->setPeriode($_POST['periode']);
+        $artiste->setEpoque($_POST['epoque']);
         $artiste->setBiographie($_POST['biographie']);
         $sync = $artiste->syncDb_artiste();
     }
-header('Location:index.php');
+header('Location:nouv_artiste.php');
         
 }
 

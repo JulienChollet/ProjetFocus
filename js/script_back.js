@@ -4,22 +4,26 @@
 
 //----------------------- script pour formulaire multiple ---------------------
 $(document).ready(function() { //quand ma page a fini de charger
-	// console.log('ok');
-	$('#formfr').submit(function(e){
+
+	var enregistrement = $("[name='form']").submit(function(e){
 		e.preventDefault();
 		var values = [];
+		//dans ce form recup les infos de chaque textarea
 		$(this).find('textarea').each(function(){
+			//pousse les dans un tableau
 			values.push($(this).val());
 		});
+		//j'affiche le tableau avec les données
 		console.log(values);
-		console.log(verification());
-		// if(verification()){
-		// 	$(this).submit();
-		// }
+		//if(verification()){
+		//	$(this).enregistrement;
+		//}
 	});
+	
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 		// e.target // onglet activée
 		// e.relatedTarget// onglet précédement activer
+		//--------------------
 		//quand je change d'onglet demande d'enregistremnt
 		verification();
 	});
@@ -27,11 +31,45 @@ $(document).ready(function() { //quand ma page a fini de charger
 		$('#someTab').tab('show');
 	});
 });
+//-----------------------------------------------------
+function entrebdd(){
+	//enregistrement.e.relatedTarget;
+	$.ajax({
+		//le chemin d'accé
+		url:'/ISFAC/Focus/ProjetFocus/ga/nouv_expo.php',
+		//la metode employer par mes form
+		method: 'POST',
+		//les information a envoyer a mon objet dans la class description_expo
+		data:{
+			id : $("#formfr input[name='id']").val(),
+			desfr : $("#formfr textarea[name='txtfr']")[0].value,
+			mdafr : $("#formfr textarea[name='txtfr']")[1].value,
+			desan : $("#formen textarea[name='txten']")[0].value,
+			mdaan : $("#formen textarea[name='txten']")[1].value,
+			desal : $("#formde textarea[name='txtde']")[0].value,
+			mdaal : $("#formde textarea[name='txtde']")[1].value,
+			desch : $("#formch textarea[name='txtch']")[0].value,
+			mdach : $("#formch textarea[name='txtch']")[1].value,
+			desru : $("#formru textarea[name='txtru']")[0].value,
+			mdaru : $("#formru textarea[name='txtru']")[1].value
+		},
+		success : function(data){
+			if (data == true) {
+				alert("votre enregistrement a etait pris en compte");
+			}
+		}
+	});
+}
 
 //-----------------------------------------------------
+	// je recupe les info des textes 
+	function verif(){
+		$("#formfr textarea[name='txtfr']")[0].value;
+	}
+//-----------------------------------------------------------------------------	
 //je vérifie s'il y a du contenue dans le textarea de la description
 function verifDescription(){
-	if(document.getElementsByTagName("TEXTAREA")[0].value == "" ){
+	if($("#formfr textarea[name='txtfr']")[0].value == "" ){
 		console.log("La Descriptionn n'as pas etait rédiger");
 		return false;
 	}
@@ -42,7 +80,7 @@ function verifDescription(){
 //-----------------------------------------------------
 //je vérifie s'il y a du contenue dans le textarea du mot de l'auteur
 function verifMotAuteur(){
-	if (document.getElementsByTagName("TEXTAREA")[1].value == ""){
+	if ($("#formfr textarea[name='txtfr']")[1].value == ""){
 		console.log("Le mot de l'auteur n'as pas etait compléter");
 		return false;
 	}	
@@ -58,82 +96,74 @@ function selectChamp(){
 	}
 	else{
 		console.log("selectChamp ne fonctionne pas");
+		return false;
 	}
 }
 //-----------------------------------------------------
 //je demande confiramation avant d'enregister dans different cas
-
+//demande d'enregistrement a chaque changement d'onglet
+//le chemain d'accer au textarea en cour n'est pas correcte!
 function verification(){
-	switch( selectChamp() == true){
+	if( selectChamp()){
 		//------------
-		case (verifDescription() == false && verifMotAuteur() == false):
+		if (verifDescription() == false && verifMotAuteur() == false){
 			var conf = confirm("Auccun champ n'a etait remplit voulez vous vraiment sauvegarder ?");
-			var conf;
+			
 			if (conf == true) {
 				//l'utilisateur Valide l'enregistrement
-				var contenu = $('#formfr input[name=txtfr]'.val());
-				console.log('enregistrement'+ contenu);
-				var verifEnregi = true;
+				$("#formfr textarea[name='txtfr']")[0].value;
+				console.log('enregistrement');
+				entrebdd();
 			}
 			else{
 				//l'utilisateur Annule l'enregistrement
 				console.log('enregistrement ANNULER');
-				var verifEnregi = false;
 			}
-			break;
+		}
 		//------------
-		case (verifDescription() == true && verifMotAuteur() == false) :
+		if (verifDescription() == true && verifMotAuteur() == false){
 			var conf = confirm("Le mot de l'Auteur n'a pas etait remplit voulez vous vraiment sauvegarder ?");
-			var conf;
+			
 			if (conf == true) {
 				//l'utilisateur Valide l'enregistrement
-				var contenu = $('textarea[name=txtfr]').val();
-				console.log('enregistrement'+ contenu);
-				var verifEnregi = true;
+				$("#formfr textarea[name='txtfr']")[0].value;
+				console.log('enregistrement');
+				entrebdd();
 			}
 			else{
 				//l'utilisateur Annule l'enregistrement
 				console.log('enregistrement ANNULER');
-				var verifEnregi = false;
 			}
-			break;
+		}
 		//------------
-		case (verifDescription() == false && verifMotAuteur() == true) :
+		if (verifDescription() == false && verifMotAuteur() == true){
 			var conf = confirm("La Description n'a pas etait remplit voulez vous vraiment sauvegarder ?");
-			var conf;
+			
 			if (conf == true) {
 				//l'utilisateur Valide l'enregistrement
-				var contenu = $('textarea[name=txtfr2]').val();
-				console.log('enregistrement'+ contenu);
-				var verifEnregi = true;
+				$("#formfr textarea[name='txtfr']")[1].value;
+				console.log('enregistrement');
+				entrebdd();
 			}
 			else{
 				//l'utilisateur Annule l'enregistrement
 				console.log('enregistrement ANNULER');
-				var verifEnregi = false;
 			}
-			break;
+		}
 		//------------
-		default:
-			var contenu = $('#formfr textarea[name=txtfr]').val();
-				console.log('enregistrement'+ contenu);
-				var verifEnregi = true;
-			break;
+		else{
+			$("#formfr textarea[name='txtfr']").val();
+				console.log('enregistrement');
+				entrebdd();
+		}
 	}
 
 	return 
 }
 //-----------------------------------------------------------------------------
-	// je recupe les info des textes 
-	function enregistrement(){
-		var contenu = $('#formfr textarea[name=txtfr]').val();
-		
-	}
-	
 
 
 //-----------------------------------------------------------------------------
-	//prochaine fonction envoyer une alete l'osque je fait une modification
+	//prochaine fonction envoyer une alerte lorsque je fais une modification
 	//prochaine fonction quand j'enregistre je reste sur mon onglé selectionner actuel
-	//demande d'enregistrement a chaque changement d'onglet
 //-----------------------------------------------------------------------------

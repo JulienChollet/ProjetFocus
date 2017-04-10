@@ -32,15 +32,16 @@ foreach($folder as $file) {
 	<header class="container-fluid"><!-- tableau 2 -->
 		<nav class="row">
 				<ul class="col-xs-12 nav nav_ul">
-					<li class="nav_li"><a href="index.php" class="nav_li_a">
+					<li class="nav_li">
+						<a href="accueil.php" class="nav_li_a">
 							<span class="fa fa-home"></span> Accueil
 						</a>
 					</li>
 					<li class="nav_li">
-                        <a href="index.php" class="nav_li_a">
-                            <span class="fa fa-paint-brush"></span> Artiste
-                        </a>
-                    </li>
+						<a href="nouv_artiste.php" class="nav_li_a">
+							<span class="fa fa-paint-brush"></span> Artiste
+						</a>
+					</li>
 					<li class="nav_li">
 						<a href="nouv_expo.php" class="nav_li_a">
 							<span class="fa fa-plus-circle" ></span> Nouvelle Exposition
@@ -62,7 +63,7 @@ foreach($folder as $file) {
 						</a>
 					</li>
 					<li class="nav_li">
-						<a href="../visiteur/index.php" class="nav_li_a">
+						<a href="../visiteur/acceuil.php" class="nav_li_a">
 							<span class="fa fa-chrome"></span> Site Publique
 						</a>
 					</li>
@@ -96,7 +97,7 @@ foreach($folder as $file) {
 				</div>
 			</div>
 			<div class="ligne col-xs-offset-2 col-xs-10 hidden-md hidden-lg"></div>
-			<div class="ligne col-xs-11 hidden-xs hidden-sm" col-md-12"></div>
+			<div class="ligne col-xs-11 hidden-xs hidden-sm"></div>
 		</div>
 		<!-- _______________________ Ordinateur ________________________ -->
 		<div class="row"><!-- Ligne 2 -->

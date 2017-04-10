@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Nom Exposition Grand Angle</title>
+	<title>Grand Angle</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
@@ -15,18 +15,18 @@
 <!-- ************************** Header **************************** -->
 	<header class="container-fluid">
 		<section class="row ligne_un_header"><!-- Ligne 1 -->
-			<h1 class="col-xs-12 h1">Nom de L'exposition</h1>
+			<h1 class="col-xs-12 h1">Salvador DALI</h1>
 		</section>
 		<section class="row ligne_deux_header"><!-- Ligne 2 -->
 			<nav>
 			<!-- Menu Déroulant -->
 				<ul class="col-xs-6 dropdown"><span class="fa fa-globe dropdown-toggle icone_nav" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>
 					<ul class="dropdown-menu col-xs-12">
-						<li>English</li>
-						<li>Français</li>
-						<li>Deutsch</li>
-						<li>中国</li>
-						<li>Pусский</li>
+						<li><a href="anglais.php">English</a></li>
+						<li><a href="index.php">Français</a></li>
+						<li><a href="allemand.php">Deutsch</a></li>
+						<li><a href="chinoi.php">中国</a></li>
+						<li><a href="russe.php">Pусский</a></li>
 					</ul>
 				</ul>
 				<!-- QR code -->

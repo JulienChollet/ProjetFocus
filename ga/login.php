@@ -21,7 +21,7 @@ if(isset($_POST['nom'])) {
 		$res = sql("SELECT autorisations FROM utilisateur WHERE id = ".$_SESSION['id'] );
 		$_SESSION['autorisations'] = $res[0]['autorisations'];
 		
-		header('Location: index.php');
+		header('Location: accueil.php');
 	}
 	else {
 		echo '<section class="container">

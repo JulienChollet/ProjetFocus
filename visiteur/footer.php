@@ -6,11 +6,11 @@
 				<span class="fa fa-calendar icone_cal"></span>
 			</div>
 			<div>
-				<p class="gras marge">Thême:</p>
-				<p class="gras marge">Début:</p>
+				<p class="gras marge"><?=$theme ?> :</p>
+				<p class="gras marge"><?=$debut ?> :</p>
 			</div>
 			<div>
-				<p class="marge " >Nom du thême</p>
+				<p class="marge " ><?=$nomDuTheme ?></p>
 				<p class="marge " >06/05/2017</p>
 			</div>
 		</section>

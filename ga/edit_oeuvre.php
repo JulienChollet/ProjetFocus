@@ -22,7 +22,7 @@ include('header.php');
 	$oeuvre->form_oeuvre('edit_oeuvre.php','modifier');
 } 
 
-if(isset($_POST['nom'])){
+if(isset($_POST['id'])){
     if (isset($_POST['id']) && $_POST['id'] != ''){
         $oeuvre = new Oeuvre($_POST['id']);
         $oeuvre->setNom($_POST['nom']);
@@ -30,11 +30,8 @@ if(isset($_POST['nom'])){
         $oeuvre->setDate_entre($_POST['date_entre']);
         $oeuvre->setDate_sortie($_POST['setDate_sortie']);
         $oeuvre->setPeriode($_POST ['periode']);
-        $oeuvre->setId_artiste($_POST ['id_artiste']);
-        $oeuvre->setId_description($_POST['id_description']);
         $oeuvre->setDimension($_POST['dimension']);
         $oeuvre->setPhoto($_FILES['imageNew']);
-        $oeuvre->setQr_code($_POST['qr_code']);
         $sync = $oeuvre->syncDb_oeuvre();
         
     }
@@ -48,12 +45,9 @@ if(isset($_POST['nom'])){
         $oeuvre->setPeriode($_POST ['periode']);
         $oeuvre->setDimension($_POST['dimension']);
         $oeuvre->setPhoto($_FILES['imageNew']);
-        // $oeuvre->setQr_code($_POST['qr_code']);
         $sync = $oeuvre->syncDb_oeuvre();
         
-        // if ($sync == ) {
         
-        // }
     }
   header('Location: nouv_oeuvre.php'); 
 }

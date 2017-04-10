@@ -15,7 +15,7 @@ $title = 'Création profil';
 //fichiers dont on a besoin pour l'execution de la fonction 
 include('header.php');
 
-//autorisation d'accès à la page de creation d'utilisateur
+// autorisation d'accès à la page de creation d'utilisateur
 session_start();
 if ( !isset($_SESSION['id']) || $_SESSION['autorisations'] != '1'){  
     header('Location: index.php');
